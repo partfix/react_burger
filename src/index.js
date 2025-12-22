@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css';
-import { useEffect } from 'react';
+
 
 //samp data
 const burgerData = [
@@ -63,7 +63,6 @@ function App() {
       <Header />
       <Menu />
       <Footer />
-      <ChatBot />
     </div>
 
   );
@@ -168,30 +167,6 @@ function OpenShop({ closeHour, openHour }) {
       <button className='btn'>Order Now</button>
     </div>
   )
-}
-
-function ChatBot() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.type = "module";
-    script.innerHTML = `
-      import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-      Chatbot.init({
-        chatflowid: "04cd4b97-e9fb-452b-ab47-4e3dcee0c5e3",
-        apiHost: "https://cloud.flowiseai.com",
-      })
-    `;
-
-    document.body.appendChild(script);
-
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
-
-  return null;
 }
 
 //render
