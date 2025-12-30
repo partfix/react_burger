@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css';
 
 
-//samp data
+//sample data
 const burgerData = [
   {
     name: "Jalapeño Burger",
@@ -172,3 +172,6 @@ function OpenShop({ closeHour, openHour }) {
 //render
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(<React.StrictMode><App /></React.StrictMode>)
+
+
+
