@@ -81,7 +81,7 @@ function Header() {
 function Menu() {
   //react don't return a truthy or falsey value but it happily return a 0
   //remember when we write one piece of JSX that JSX can only have basically one root element (you )
-  const burger = burgerData                 // to check the boolean existing or no
+  const burger = burgerData                 // check the boolean existing or no
   const countBurgers = burgerData.length    // if length is true or false
 
   return (
