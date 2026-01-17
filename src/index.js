@@ -55,6 +55,7 @@ const burgerData = [
   },
 ];
 
+
 //main component
 function App() {
   return (
@@ -63,10 +64,12 @@ function App() {
       <Header />
       <Menu />
       <Footer />
+      <CoWrite />
     </div>
 
   );
 }
+
 
 function Header() {
   const headStyle = { color: 'red', fontSize: '50px' }
@@ -117,11 +120,13 @@ function Burger({ dataObj }) { // destructure here
   return (
     <li className={`pizza ${dataObj.soldOut ? 'sold-out' : ''}`}>
       <img src={dataObj.photoName} alt={dataObj.name} ></img>
+
       <div>
         <h3 style={dataObj.soldOut ? soldOut : active}>{dataObj.name}</h3>
         <p>{dataObj.ingredients}</p>
         <span style={priceStyle}>{dataObj.currency} {dataObj.price}</span>
       </div>
+
     </li>
   );
 }
@@ -169,8 +174,14 @@ function OpenShop({ closeHour, openHour }) {
   )
 }
 
+function CoWrite() {
+  return (
+    <p>For educational Purposes Only.</p>
+  )
+}
+
 //render to show on page.
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<React.StrictMode><App /></React.StrictMode>)
 
 
