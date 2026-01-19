@@ -84,7 +84,7 @@ function Header() {
 function Menu() {
   //react don't return a truthy or falsey value but it happily return a 0
   //remember when we write one piece of JSX that JSX can only have basically one root element (you )
-  const burger = burgerData                 // check if the boolean existing or no
+
   const countBurgers = burgerData.length    // check if the length is true or false
 
   return (
@@ -99,7 +99,7 @@ function Menu() {
           </p>
 
           <ul className='pizzas'>
-            {burger?.map((display) => <Burger dataObj={display} key={display.name} />)}
+            {burgerData.map((display) => <Burger dataObj={display} key={display.name} />)}
           </ul>
         </>
 
@@ -115,7 +115,7 @@ function Burger({ dataObj }) { // destructure here
 
   const active = { color: 'orangered', fontWeight: '500' }
   const soldOut = { color: '888' }
-  const priceStyle = { fontWeight: '500' }
+  const priceStyle = { fontWeight: '400' }
 
   return (
     <li className={`pizza ${dataObj.soldOut ? 'sold-out' : ''}`}>
@@ -183,6 +183,3 @@ function CoWrite() {
 //render to show on page.
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<React.StrictMode><App /></React.StrictMode>);
-
-
-
